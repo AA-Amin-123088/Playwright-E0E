@@ -1,0 +1,23 @@
+import { test } from '@playwright/test';
+import { customMethod } from '../utils/CustomCommands';
+const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+test.describe('Sauce Demo Tests with Session', () => {
+
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/inventory.html',{waitUntil:'domcontentloaded'});
+    await delay(2000);
+  });
+  test.afterEach(async ({page}) => {
+    await page.close();
+  });
+  test('Test Case 1: Verify Feature Items', async ({ page }) => {
+    await page.locator("//div[normalize-space()='Sauce Labs Fleece Jacket']").click();
+    await delay(1000);
+  });
+  test('Test Case 2: Scroll to Bottom', async ({ page }) => {
+    await customMethod(page);
+    await delay(1000);
+  });
+
+})
