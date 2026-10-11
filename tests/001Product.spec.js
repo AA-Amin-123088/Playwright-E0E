@@ -3,7 +3,6 @@ import { faker } from '@faker-js/faker';
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 const randomEmail = faker.internet.email();
 import { PageObject } from '../pageobject/PageObject';
-import { clearAndTypeInput } from '../utils/CustomCommands';
 
 test.beforeEach(async({page}) => {
   await page.goto('/inventory.html',{waitUntil:'domcontentloaded'});
