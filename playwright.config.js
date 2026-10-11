@@ -159,3 +159,18 @@ module.exports = defineConfig({
 
 // npm install rimraf --save-dev
 // $env:ENV="prod"; npx playwright test --headed
+
+//multiple environment setup for config and global-setup section 
+//import * as dotenv from 'dotenv';
+//import path from 'path';
+//Get environment variable from CLI or default to dev
+//const ENV = process.env.ENV || 'dev';
+//Load corresponding .env file
+//dotenv.config({ path: path.resolve(__dirname, `./env/${ENV}.env`) });
+
+//use section in use block to set baseURL and storageState
+//storageState: `session/${ENV}-state.json`,
+//baseURL: process.env.BASE_URL,
+
+//env folder
+//dev.env and prod.env
