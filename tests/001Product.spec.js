@@ -9,7 +9,7 @@ test.beforeEach(async({page}) => {
   await page.goto('/inventory.html',{waitUntil:'domcontentloaded'});
 });
 test.afterEach(async ({page})=>{
-  await delay(2000);
+  await delay(1000);
   await page.close();
 });
 test('Add Product E2E Test1',async({page}) => {
